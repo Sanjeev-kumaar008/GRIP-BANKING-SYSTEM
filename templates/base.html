@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+</head>
+<body>
+    <header>
+        <nav class = "nav-wrapper transparent">
+            <div class = "container ">
+                <a href = "/">
+            <img style="margin-top: 6px;" src = "{% static 'images/Group 1.jpg' %}" alt width = "150" height = "50"></a>
+           <ul class = "right">
+            <li>
+                <a href="#CreateUser" id = "" class="btn transparent black-text modal-trigger">Create User</a>
+            </li>
+            <li>
+                <a href="/history"  id = "" style="font-weight: bolder;color: black;" class="black-text text-darken ">Transaction History</a>
+            </li>
+            <li>  
+                <a href="/members"  id = "customerstab" style="font-weight: bolder;" class="black-text text-darken">Customers</a>
+            </li>  
+            <li>    
+                <a href="/transaction"  id = "transfertab" style="font-weight: bolder;" class="black-text text-darken">Transfer money</a>
+            </li>  
+            </ul>
+            </div>
+
+              
+    </nav><br><br>
+
+
+    {% block content %}
+
+
+    {% endblock %}
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".carousel").carousel({
+            duration : 300,
+            padding : 10,
+            dist : 100
+        })
+    });
+    $(document).ready(function(){
+    $('.modal').modal();
+  });
+  
+</script>
+
+</html>
