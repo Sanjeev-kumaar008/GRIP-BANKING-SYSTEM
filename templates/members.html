@@ -1,36 +1,37 @@
 {% extends 'base.html' %}
  {% block content %}
- <div id="CreateUser" class="modal center">
-    <div class = "modal-header" style = "background-color: rgb(102, 98, 98);padding: 5px;">
-        <h4 class = "modal-title center mt-2">CREATE USER</h4>
+ 
+ <div class = "container">
+    <div class = "row">
+ {% for user in user %}
+ 
+
+    <div class = "col l4">
+
+ <div class="card">
+   
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 "><h4>{{user.username}}</h4></span>
+      <h4>{{user.mobile}}</h4> <a class="btn disabled"><p class = "black-text bold">{{user.amount}}</p></a>
+      <a href = "/transaction" class="waves-effect waves-light btn">Transfer Money</a>
     </div>
-    <div class="modal-content">
-        <form class = "col s6" action = "register" method="POST">
-        <div class = "row">
-            <div class="input-field col s6">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="username" type="text" name = "username">
-                <label for="username">Username</label>
-            </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">phone</i>
-                <input id="phno" type="text" name = "Mobile" >
-                <label for="phno">Mobile.no</label>
-            </div>
-        </div>
-        <div class="input-field col s6 center">
-            <input id="amount" type="text" name = "amount">
-            <label for="amount"><i class="material-icons">attach_money</i>Amount</label>
-        </div>
+
+ </div>
+
+</div>
+
+ 
+
+
         
-
-    </div>
-    <div class="modal-footer">
-        <a href="#!" type="submit" class="btn modal-close waves-effect waves-green btn-flat" id = "createbtn">Create</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-    </div>
-  </div> 
+    
+  
+ {% endfor %}
+</div>
+</div>
 
 
+
+    
 
  {% endblock %}

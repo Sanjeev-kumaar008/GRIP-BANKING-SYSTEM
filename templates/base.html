@@ -20,7 +20,7 @@
             <img style="margin-top: 6px;" src = "{% static 'images/Group 1.jpg' %}" alt width = "150" height = "50"></a>
            <ul class = "right">
             <li>
-                <a href="#CreateUser" id = "" class="btn transparent black-text modal-trigger">Create User</a>
+                <a href="registration/register" id = "" class="btn transparent black-text modal-trigger">Create User</a>
             </li>
             <li>
                 <a href="/history"  id = "" style="font-weight: bolder;color: black;" class="black-text text-darken ">Transaction History</a>
@@ -56,7 +56,24 @@
     $(document).ready(function(){
     $('.modal').modal();
   });
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+  $(document).ready(function(){
+      $(".submit").click(function(){
+      $('.progress').progress();
+    }
+      );
+  })
+
   
+</script>
+<script>
+    function loading(){
+        var load = document.querySelector(".progress");
+        load.style.visibility = "visible";
+    }
+
 </script>
 
 </html>
